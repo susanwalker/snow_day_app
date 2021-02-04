@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    Add Location
+  </div>
+
+  <div class="card-body">
+    <%= form_with url: '/locations', method: :post do |form| %>
+      <div class="mb-3">
+        <%= form.label :zip_code, "Zip Code", class: "form-label" %>
+        <%= form.text_field :zip_code, class: "form-control" %>
+      </div>
+
+      <%= form.submit "Save", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

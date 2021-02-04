@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    Add Snow Report to <%= @location.zip_code %>
+  </div>
+
+  <div class="card-body">
+    <%= form_with url: "/locations/#{@location.id}/update_report", method: :put do |form| %>
+      <div class="mb-3">
+        <%= form.label :max_inches_of_snow, "Inches of Snow", class: "form-label" %>
+        <%= form.number_field :max_inches_of_snow, class: "form-control" %>
+      </div>
+
+      <%= form.submit "Save", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

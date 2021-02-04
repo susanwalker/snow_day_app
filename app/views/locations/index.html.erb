@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header">
+    Locations
+  </div>
+
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Zip Code</th>
+          <th scope="col">Largest Reported Snowfall (Inches) ↓</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @locations.each_with_index do |l, index| %>
+          <tr>
+            <td id="location#<%= index %>"><%= l.zip_code %></td>
+            <td><%= l.max_inches_of_snow || "No reports yet." %></td>
+            <td><a href="<%= "/locations/#{l.id}/edit_report" %>" <button type="button" class="btn btn-primary">New Record</button</a></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <a href="/locations/new" <button type="button" class="btn btn-primary">New Location</button></a>
+  </div>
+</div>
